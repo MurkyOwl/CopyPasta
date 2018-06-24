@@ -1,7 +1,7 @@
 # CopyPasta
 
 
-CopyPasta takes the contents of your clipboard(when you hit "ctrl+c") and sends them through [evepraisal's](https://evepraisal.com/)API to return the sell value, buy value and the volume, as well as a link to the specific appraisal.
+CopyPasta takes the contents of your clipboard(when you hit "ctrl+c") and sends them through [Evepraisal's](https://evepraisal.com/)API to return the sell value, buy value and the volume, as well as a link to the specific appraisal.
 
 ## Hit ctrl+c twice to get the result
 
