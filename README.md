@@ -6,10 +6,10 @@ this is due to `trigger_on_release=True` not actually working so we have to run 
 
 ## Stuff used with this program
 
-[keyboard](https://github.com/boppreh/)
-[wxPython](https://www.wxpython.org/)
-[wxFormBuilder](https://github.com/wxFormBuilder/wxFormBuilder)
-[PyInstaller](https://www.pyinstaller.org/)
+[keyboard](https://github.com/boppreh/)<br/>
+[wxPython](https://www.wxpython.org/)<br/>
+[wxFormBuilder](https://github.com/wxFormBuilder/wxFormBuilder)<br/>
+[PyInstaller](https://www.pyinstaller.org/)<br/>
 
 ## Install
 go to releases and grab the windows executable from there, if you are on some sort of linux distro feel free to run it from the normal python, 
