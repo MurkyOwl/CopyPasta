@@ -18,7 +18,7 @@ import wx.adv
 class Mainframe ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Copypasta", pos = wx.DefaultPosition, size = wx.Size( 355,301 ), style = wx.DEFAULT_FRAME_STYLE|wx.STAY_ON_TOP|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Copypasta", pos = wx.DefaultPosition, size = wx.Size( 355,301 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.RESIZE_BORDER|wx.STAY_ON_TOP|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
@@ -31,7 +31,7 @@ class Mainframe ( wx.Frame ):
 		self.m_staticText1.Wrap( -1 )
 		gSizer1.Add( self.m_staticText1, 0, wx.ALL, 5 )
 		
-		self.m_hyperlink1 = wx.adv.HyperlinkCtrl( self.m_panel1, wx.ID_ANY, u"Click Me,", wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.adv.HL_DEFAULT_STYLE )
+		self.m_hyperlink1 = wx.adv.HyperlinkCtrl( self.m_panel1, wx.ID_ANY, u"Click Me,", u"https://evepraisal.com/", wx.DefaultPosition, wx.DefaultSize, wx.adv.HL_DEFAULT_STYLE )
 		gSizer1.Add( self.m_hyperlink1, 0, wx.ALL, 5 )
 		
 		self.statictext3 = wx.StaticText( self.m_panel1, wx.ID_ANY, u"Sell Value:", wx.DefaultPosition, wx.DefaultSize, 0 )
