@@ -1,6 +1,8 @@
 import wx, keyboard, requests, json, gui, wx.adv, sys, traceback
 
 
+
+
 class CopyFrame(gui.Mainframe):
 	#Constructor thingie
 	def __init__(self, parent):
@@ -8,7 +10,6 @@ class CopyFrame(gui.Mainframe):
 		gui.Mainframe.__init__(self,parent)
 		#below here we have the trigger action, problem so far is that when you set it to trigger on release True, it doesnt work, self.copier starts the copier function. 
 		keyboard.add_hotkey('ctrl+c', self.copier, suppress=False, timeout=1, trigger_on_release=False)
-
 
 	#Copier function grabs the code from clipboard then runs it through the gauntlet 
 	def copier(self):
@@ -41,8 +42,25 @@ class CopyFrame(gui.Mainframe):
 				self.Volume.Clear()
 
 				self.m_hyperlink1.SetURL('https://evepraisal.com/a/{}'.format(webID))
-				self.sellValue.AppendText("{0:,.2f}".format(sellValue))
-				self.buyValue.AppendText("{0:,.2f}".format(buyValue))
+				if sellValue < 1000000:
+					self.sellValue.AppendText("{0:,.2f} THOUSAND".format(sellValue))
+				elif sellValue < 1000000000:
+					self.sellValue.AppendText("{0:,.2f} MILLION".format(sellValue))
+				elif sellValue < 1000000000000:
+					self.sellValue.AppendText("{0:,.2f} Billion".format(sellValue))
+				else:
+					self.sellValue.AppendText("{0:,.2f} KILL IT NOW!".format(sellValue))
+
+
+				if buyValue < 1000000:
+					self.buyValue.AppendText("{0:,.2f} THOUSAND".format(buyValue))
+				elif buyValue < 1000000000:
+					self.buyValue.AppendText("{0:,.2f} MILLION".format(buyValue))
+				elif buyValue < 1000000000000:
+					self.buyValue.AppendText("{0:,.2f} Billion".format(buyValue))
+				else:
+					self.buyValue.AppendText("{0:,.2f} KILL IT NOW!".format(buyValue))
+
 				self.Volume.AppendText("{0:,.2f}".format(volume))
 				sellValue = None
 				buyValue = None
