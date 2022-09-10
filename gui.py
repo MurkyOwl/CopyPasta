@@ -7,6 +7,7 @@
 ## PLEASE DO *NOT* EDIT THIS FILE!
 ###########################################################################
 
+from tkinter import Frame
 import wx
 import wx.xrc
 import wx.adv
@@ -18,8 +19,10 @@ import wx.adv
 class Mainframe ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Copypasta", pos = wx.DefaultPosition, size = wx.Size( 355,301 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.RESIZE_BORDER|wx.STAY_ON_TOP|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
-		
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CopyPasta", pos = wx.DefaultPosition,  size = wx.Size( 355,301 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.RESIZE_BORDER|wx.STAY_ON_TOP|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL)
+		icon = wx.Icon('icon/spaghetti.ico', wx.BITMAP_TYPE_ANY)
+		self.SetIcon(icon)
+
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )

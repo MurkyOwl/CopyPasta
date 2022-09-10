@@ -3,9 +3,9 @@
 
 CopyPasta takes the contents of your clipboard(when you hit "ctrl+c") and sends them through [Evepraisal's](https://evepraisal.com/) API to return the sell value, buy value and the volume, as well as a link to the specific appraisal.
 
-## Hit ctrl+c twice to get the result
+## Keyboard 0.11.0 Required
 
-this is due to `trigger_on_release=True` not actually [working](https://github.com/boppreh/keyboard/issues/178) so we have to run on the KeyPress down before your content is in the clipboard.
+This is due to "trigger_on_release=True" only working on 0.11.0, and not the most recent version.
 
 ## Stuff used with this program
 

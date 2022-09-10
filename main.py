@@ -9,7 +9,7 @@ class CopyFrame(gui.Mainframe):
 		#Calling the MAINFRAME!!!! IE starting the GUI section
 		gui.Mainframe.__init__(self,parent)
 		#below here we have the trigger action, problem so far is that when you set it to trigger on release True, it doesnt work, self.copier starts the copier function. 
-		keyboard.add_hotkey('ctrl+c', self.copier, suppress=False, timeout=1, trigger_on_release=False)
+		keyboard.add_hotkey('ctrl+c', self.copier, suppress=False, timeout=1, trigger_on_release=True)
 
 	#Copier function grabs the code from clipboard then runs it through the gauntlet 
 	def copier(self):
@@ -21,7 +21,7 @@ class CopyFrame(gui.Mainframe):
 		#if we are successful we send the contents of the clipboard to Evepraisal for appraisal
 		if success:
 			payload = text_data.GetText()
-			header= {'user-agent': 'Atrol Nalelmir, Triumvirate, Ganking Helper'}
+			header= {'user-agent': 'Atrol Nalelmir, Brave, Ganking Helper'}
 			r = requests.post('https://evepraisal.com/appraisal.json?market=jita', data=payload, headers=header)
 
 			#put our return content into a dict
@@ -49,7 +49,7 @@ class CopyFrame(gui.Mainframe):
 				elif sellValue < 1000000000000:
 					self.sellValue.AppendText("{0:,.2f} Billion".format(sellValue))
 				else:
-					self.sellValue.AppendText("{0:,.2f} KILL IT NOW!".format(sellValue))
+					self.sellValue.AppendText("{0:,.2f} Trillion+".format(sellValue))
 
 
 				if buyValue < 1000000:
@@ -59,7 +59,7 @@ class CopyFrame(gui.Mainframe):
 				elif buyValue < 1000000000000:
 					self.buyValue.AppendText("{0:,.2f} Billion".format(buyValue))
 				else:
-					self.buyValue.AppendText("{0:,.2f} KILL IT NOW!".format(buyValue))
+					self.buyValue.AppendText("{0:,.2f} Trillion+".format(buyValue))
 
 				self.Volume.AppendText("{0:,.2f}".format(volume))
 				sellValue = None
